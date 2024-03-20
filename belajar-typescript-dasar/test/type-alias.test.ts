@@ -5,7 +5,7 @@ describe('Type Alias', function () {
 
         const category: Category = {
             id: "1",
-            name: "PC"
+            name: "PC",
         }
 
         const product: Product = {
