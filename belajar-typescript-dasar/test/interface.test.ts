@@ -1,5 +1,6 @@
 import { Employee, Manager } from "../src/employee"
 import { Seller } from "../src/seller"
+import {Person} from "../src/person";
 
 describe('Interface', function () {
     it('should support in typescript', function () {
@@ -77,10 +78,7 @@ describe('Interface', function () {
     })
 
     it('should support in interface', function () {
-        interface Person {
-            name: string;
-            sayHello(name: string) : string;
-        }
+        
 
         const person: Person = {
             name: "Nico",
@@ -110,5 +108,16 @@ describe('Interface', function () {
         }
 
         console.info(domain);
+    })
+
+    it('should support type assertions', function () {
+
+        const person: any = {
+            name: "Nico",
+            age: 17
+        }
+
+        const person2 : Person = person as Person;
+        console.info(person2)
     })
 })
