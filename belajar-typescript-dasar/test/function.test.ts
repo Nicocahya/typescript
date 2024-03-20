@@ -65,4 +65,25 @@ describe('Function', function () {
         expect(callMe("Nico")).toBe("NICO");
 
     })
+
+    it('should function as parameter', function () {
+
+        function sayHello(name: string, filter : (name: string)=> string) : string {
+            return `Hello ${filter(name)}`;
+        }
+
+        function toUpper(name: string): string {
+            return name.toUpperCase();
+        }
+
+        expect(sayHello("Nico", toUpper)).toBe("Hello NICO");
+
+        expect(sayHello("Nico", function (name: string): string {
+            return name.toUpperCase();
+        })).toBe("Hello NICO")
+
+        expect(sayHello("Nico", (name: string): string => name.toUpperCase(
+            
+        ))).toBe("Hello NICO");
+    })
 })
