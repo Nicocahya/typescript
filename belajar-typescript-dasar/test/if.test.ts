@@ -11,4 +11,11 @@ describe('If Statment', function () {
             console.info("Try Again")
         }
     })
+
+    it('should support ternary operator', function () {
+
+        const value = 80;
+        const say = value >= 75 ? "Congratulation" : "Try Again";
+        console.info(say);
+    })
 })
